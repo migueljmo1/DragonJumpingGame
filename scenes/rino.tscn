@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bd3xkxg07xten"]
+
+[ext_resource type="Script" uid="uid://cjecrs2f4g68m" path="res://scripts/Enemys/rino.gd" id="1_1jix5"]
+[ext_resource type="Texture2D" uid="uid://dhq6046xk356w" path="res://assets/Enemy_assets/rino/Enemy_Dino.png" id="2_1jix5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jix5"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(0, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iquy5"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(425, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5kj2"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(850, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyr46"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(1275, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khrpo"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(1700, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgllw"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(2125, 0, 425, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck6c1"]
+atlas = ExtResource("2_1jix5")
+region = Rect2(2550, 0, 425, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7oh5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jix5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iquy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5kj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyr46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khrpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgllw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck6c1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iftde"]
+radius = 20.631569
+height = 201.26317
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jix5"]
+radius = 70.36204
+height = 256.1779
+
+[node name="Rino" type="CharacterBody2D"]
+scale = Vector2(0.95, 0.95)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_1jix5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7oh5u")
+animation = &"run"
+frame = 1
+frame_progress = 0.64997876
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-17.26316, 57.26317)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_iftde")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2(-23.999998, 6.1403513)
+rotation = -1.5865043
+shape = SubResource("CapsuleShape2D_1jix5")

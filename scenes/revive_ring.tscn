@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn4igbro074dm"]
+
+[ext_resource type="Script" uid="uid://b7dq7jy1lxyr5" path="res://scripts/revive_ring.gd" id="1_3k7fi"]
+[ext_resource type="Texture2D" uid="uid://c621pjvdcjji7" path="res://assets/orhers/Aro_revivir.png" id="1_bde8k"]
+
+[node name="ReviveRing" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_3k7fi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bde8k")

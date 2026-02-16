@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsplk8jbri0pg"]
+
+[ext_resource type="Script" uid="uid://b3f86xn7qitk4" path="res://scripts/coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://3wsqsa6hqjfg" path="res://assets/orhers/Coin.png" id="2_11l1o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d14el"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_11l1o")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_11l1o")
+}],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_11l1o")
+}],
+"loop": true,
+"name": &"purple",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ikuy"]
+radius = 283.34607
+
+[node name="Coin" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_i64fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.2061343, 1.2061343, 1.2061343, 1)
+sprite_frames = SubResource("SpriteFrames_d14el")
+animation = &"purple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_1ikuy")

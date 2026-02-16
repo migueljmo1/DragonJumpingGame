@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://eswvj2vqiyq5"]
+
+[ext_resource type="Texture2D" uid="uid://hrmbgyuuehcl" path="res://assets/Enemy_assets/teroradtilo/pterodactilo.png" id="1_em1j7"]
+[ext_resource type="Script" uid="uid://c4u6mf74uka3i" path="res://scripts/Enemys/pterodactilo.gd" id="1_gj6bi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj6bi"]
+atlas = ExtResource("1_em1j7")
+region = Rect2(0, 0, 354, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qdtn"]
+atlas = ExtResource("1_em1j7")
+region = Rect2(354, 0, 354, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v31b"]
+atlas = ExtResource("1_em1j7")
+region = Rect2(708, 0, 354, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpvpw"]
+atlas = ExtResource("1_em1j7")
+region = Rect2(1062, 0, 354, 245)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1qo6"]
+atlas = ExtResource("1_em1j7")
+region = Rect2(1416, 0, 354, 245)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mr5ct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj6bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qdtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v31b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpvpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1qo6")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jp8f"]
+size = Vector2(202, 137)
+
+[node name="Pterodactilo" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_gj6bi")
+amplitude = 20.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mr5ct")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-25, 29.5)
+shape = SubResource("RectangleShape2D_7jp8f")

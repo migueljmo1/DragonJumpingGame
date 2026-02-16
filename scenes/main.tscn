@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://clrma0qscw7ta"]
+
+[ext_resource type="Script" uid="uid://c3f3m4ncnkbeg" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://3ifnitv4mefx" path="res://scenes/bg.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dvye4x4mf1q0k" path="res://scenes/groundparents.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bobv2u32o64dm" path="res://scenes/dino.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://3c5pgqk4i7kt" path="res://scenes/hud.tscn" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://c23mkdvnh8h1f" path="res://scripts/mobileinput.gd" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c1yp4ie5imxnl" path="res://scenes/ui/result_panel.tscn" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://drupiaxyy3a73" path="res://scenes/antebg.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://buj7cxbtp36ye" path="res://scenes/ui/revive_panel.tscn" id="8_tipki"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_jyhfs")
+revive_spawn_delay = 3000.0
+
+[node name="GroundParents" parent="." instance=ExtResource("2_tefeu")]
+position = Vector2(4, -212)
+
+[node name="Bg" parent="." instance=ExtResource("2_jyhfs")]
+
+[node name="Dino" parent="." instance=ExtResource("3_tbgi4")]
+position = Vector2(606, 794)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, 677.63)
+zoom = Vector2(1.15, 1.15)
+limit_enabled = false
+
+[node name="HUD" parent="." instance=ExtResource("5_tbgi4")]
+
+[node name="RevivePanel2" parent="HUD" instance=ExtResource("8_tipki")]
+visible = false
+
+[node name="ResultPanel" parent="HUD" instance=ExtResource("7_85g3d")]
+visible = false
+
+[node name="MobileInput" type="Node" parent="."]
+script = ExtResource("6_tefeu")
+
+[node name="anteBg" parent="." instance=ExtResource("7_o6xl0")]
+layer = 0
+offset = Vector2(0, 72.82)
+transform = Transform2D(1, 0, 0, 1, 0, 72.82)

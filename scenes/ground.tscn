@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c05jgj736ha26"]
+
+[ext_resource type="Texture2D" uid="uid://c3np512lekx72" path="res://bg/suelo.png" id="1_pybca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pybca"]
+size = Vector2(1922, 143)
+
+[node name="GroundParents" type="Node2D"]
+
+[node name="GroundA" type="StaticBody2D" parent="."]
+
+[node name="FloorA" type="Sprite2D" parent="GroundA"]
+position = Vector2(0, 1144)
+scale = Vector2(1, 0.62982005)
+texture = ExtResource("1_pybca")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundA"]
+position = Vector2(961, 1268)
+shape = SubResource("RectangleShape2D_pybca")
+
+[node name="GroundB" type="StaticBody2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="FloorA" type="Sprite2D" parent="GroundB"]
+position = Vector2(0, 1144)
+scale = Vector2(1, 0.62982005)
+texture = ExtResource("1_pybca")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundB"]
+position = Vector2(960.75, 1268)
+shape = SubResource("RectangleShape2D_pybca")

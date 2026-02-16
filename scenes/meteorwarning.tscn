@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cym403xfa5n1t"]
+
+[ext_resource type="Texture2D" uid="uid://crujlfi083k4l" path="res://assets/Enemy_assets/met/avisoCirculo.png" id="1_muw06"]
+[ext_resource type="Script" uid="uid://cjcr0y78diemf" path="res://scripts/Enemys/meteorwarning.gd" id="1_s3c18"]
+
+[node name="MeteorWarning" type="Node2D"]
+z_index = 1
+script = ExtResource("1_s3c18")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.11764706, 1, 1)
+z_index = 1
+scale = Vector2(0.3, 0.3)
+skew = -1.3439035
+texture = ExtResource("1_muw06")

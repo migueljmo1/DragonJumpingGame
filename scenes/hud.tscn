@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=3 uid="uid://3c5pgqk4i7kt"]
+
+[ext_resource type="Texture2D" uid="uid://b3ks1jyww5sms" path="res://assets/Cartas/CartaRevivir.png" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="RunUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="RunUI"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -2.0
+offset_right = 139.0
+offset_bottom = 53.0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="RunUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1612.0
+offset_right = 1839.0
+offset_bottom = 55.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "High Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="RunUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 62.0
+offset_right = 127.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Coins:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartLabel" type="Label" parent="MainMenuUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -22.0
+offset_right = 166.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "TAP TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MainMenuUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = -323.535
+offset_right = 135.5
+offset_bottom = -120.53543
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ahhtf")
+
+[node name="Menu" type="Control" parent="MainMenuUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Board" type="TextureRect" parent="MainMenuUI/Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -522.0
+offset_top = -202.99957
+offset_right = 522.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ShopButton" type="Button" parent="MainMenuUI/Menu/Board" groups=["menu_button"]]
+layout_mode = 0
+offset_left = 184.0
+offset_top = -0.0004272461
+offset_right = 280.0
+offset_bottom = 40.999146
+text = "Shop
+"
+
+[node name="SkinButton" type="Button" parent="MainMenuUI/Menu/Board" groups=["menu_button"]]
+layout_mode = 0
+offset_left = 403.0
+offset_top = -0.0004272461
+offset_right = 499.0
+offset_bottom = 40.999146
+text = "Skin
+"
+
+[node name="AlbumButton" type="Button" parent="MainMenuUI/Menu/Board" groups=["menu_button"]]
+layout_mode = 0
+offset_left = 643.0
+offset_top = -0.0004272461
+offset_right = 739.0
+offset_bottom = 40.999146
+text = "Album
+"
+
+[node name="SettingsButton" type="Button" parent="MainMenuUI/Menu/Board" groups=["menu_button"]]
+layout_mode = 0
+offset_left = 870.0
+offset_top = -0.0004272461
+offset_right = 966.0
+offset_bottom = 40.999146
+text = "Settings
+"

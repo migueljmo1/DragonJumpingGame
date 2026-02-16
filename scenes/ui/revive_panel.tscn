@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=3 uid="uid://buj7cxbtp36ye"]
+
+[ext_resource type="Script" uid="uid://bnmtoknml21pn" path="res://scripts/Ui/revive_panel.gd" id="1_0plt3"]
+[ext_resource type="Texture2D" uid="uid://b31jufsoxxfxx" path="res://assets/Cartas/FondoCartas.png" id="2_ovdp6"]
+[ext_resource type="Texture2D" uid="uid://b3ks1jyww5sms" path="res://assets/Cartas/CartaRevivir.png" id="3_df7si"]
+[ext_resource type="Texture2D" uid="uid://criooecaj8gmj" path="res://assets/Cartas/CartaMonedas.png" id="4_6itam"]
+
+[sub_resource type="FontFile" id="FontFile_3s333"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcdoq"]
+bg_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_size = 7
+
+[node name="RevivePanel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0plt3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Dimmer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12941177)
+
+[node name="Board" type="TextureRect" parent="."]
+process_mode = 3
+layout_mode = 1
+offset_right = 1921.0
+offset_bottom = 1087.0
+mouse_filter = 2
+texture = ExtResource("2_ovdp6")
+
+[node name="TitleLabel" type="Label" parent="Board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -362.0
+offset_right = 166.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4920485, 0, 0.15267834, 1)
+theme_override_font_sizes/font_size = 80
+text = "¿RESUSITAR?"
+
+[node name="WatchAdButton" type="Button" parent="Board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = 80.0
+offset_right = -88.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99390966, 0.5011497, 0.54783356, 1)
+theme_override_fonts/font = SubResource("FontFile_3s333")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcdoq")
+text = "ANUNCIO"
+
+[node name="SkipButton" type="Button" parent="Board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 119.0
+offset_top = 80.0
+offset_right = 429.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99390966, 0.5011497, 0.54783356, 1)
+theme_override_fonts/font = SubResource("FontFile_3s333")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcdoq")
+text = "SKIP
+"
+
+[node name="CardContainer" type="Control" parent="Board"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 344.0
+offset_top = 255.0
+offset_right = -355.0
+offset_bottom = -276.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ReviveSlot" type="Control" parent="Board/CardContainer"]
+anchors_preset = 0
+offset_right = 561.0
+offset_bottom = 556.0
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ReviveCard" type="TextureButton" parent="Board/CardContainer/ReviveSlot"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 155.0
+offset_right = 555.0
+offset_bottom = 556.0
+focus_mode = 0
+texture_normal = ExtResource("3_df7si")
+
+[node name="CoinSlot" type="Control" parent="Board/CardContainer"]
+anchors_preset = 0
+offset_left = 661.0
+offset_right = 1222.0
+offset_bottom = 556.0
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="CoinCard" type="TextureButton" parent="Board/CardContainer/CoinSlot"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 33.0
+offset_right = 433.0
+offset_bottom = 556.0
+focus_mode = 0
+texture_normal = ExtResource("4_6itam")
+
+[connection signal="pressed" from="Board/WatchAdButton" to="." method="_on_watch_ad_button_pressed"]
+[connection signal="pressed" from="Board/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="Board/CardContainer/ReviveSlot/ReviveCard" to="." method="_on_revive_card_pressed"]
+[connection signal="pressed" from="Board/CardContainer/CoinSlot/CoinCard" to="." method="_on_coin_card_pressed"]
